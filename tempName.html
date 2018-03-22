@@ -1,0 +1,83 @@
+ <html>
+
+<head>
+    <title>JS tut 4</title>
+</head>
+
+<body>
+    <h3>JS Tut 4</h3>
+
+    <script language="javascript" type="text/javascript">
+        document.write(">> Start <br />");
+
+        function multiDimArr()
+        {
+            var multiDim = [ [1,2,3] , [4,5,6] ];
+            
+            for (var i=0 ; i< multiDim.length ; i++)
+            {
+                for(var j=0; j<multiDim[i].length ; j++)
+                {
+                    document.write(multiDim[i][j] + " " );
+                }
+                document.write("<br />");
+            }
+        }
+
+        function addMany(num1, num2)
+        {
+            var i=1;
+            var sum=1;
+            document.write("Arguments length : " + arguments.length + "<br />");
+
+            while(i < arguments.length)
+            {
+                sum = sum + arguments[i];
+                i++;
+            }
+
+            document.write("Sum of arguments : " + sum + "<br />");
+        } 
+
+        var scopeTest = 1;
+        
+        function scope1()
+        {
+            document.write("In scope1 : " + scopeTest + "<br />");
+            var scopeTest = 5 ;
+            document.write("In scope1 : " + scopeTest + "<br />");          
+            return true; 
+        } 
+
+        function scope2()
+        {
+            var hue = "aha";
+            document.write("In scope2 : " + hue + "<br />");
+        }
+
+        document.write(">> " + scopeTest + "</br>");
+         
+
+    </script>
+    
+
+    <p> ------------------ <p>
+
+    <script language="javascript" type="text/javascript">
+
+	
+        //arr = generateArray1();
+        //printArrFunc(arr);
+        //arraySplicing();
+
+        //multiDimArr();
+        //addMany(2,3,4);
+        scope1();
+        scope2();
+        
+        document.write(">>");
+    </script>    
+
+</body>
+
+</html>

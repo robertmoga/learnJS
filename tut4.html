@@ -1,0 +1,98 @@
+ <html>
+
+<head>
+    <title>JS tut 4</title>
+</head>
+
+<body>
+    <h3>JS Tut 4</h3>
+
+    <script language="javascript" type="text/javascript">
+
+    function test1()
+    {
+        var statArray = new Array(10); //static declaration
+        var othrArray = new Array();
+        othrArray[0]="hue";
+        othrArray[1]="123"
+        othrArray[2]=23;
+        othrArray[3] = new Array();
+        othrArray[3][0] = 1;
+        othrArray[3][1] = 2;
+
+
+        arr = ['hue', 'bahue', 'ahue'];
+        //    document.write("->");
+        document.write(othrArray );
+        document.write("<br/> >length of arr : " + arr.length);
+        document.write("<br/><br/>");
+
+        // for (i = 0; i < othrArray.length ; i++) {
+        //     document.write(i + " " + othrArray[i]+"<br/>");
+        // }
+        }
+
+        function generateArray1()
+        {
+            //concat 2 arrays
+        sampArry1 = new Array();
+        sampArry1[0] = "vw";
+        sampArry1[1] = "opel";
+        
+        sampArray2 = ['land rover', 'bentely']; 
+        
+        sampArray3 = sampArry1.concat(sampArray2);
+
+        //document.write(sampArray3);
+        return sampArray3;
+        }
+
+        function printArrFunc(arr)
+        {
+            //showcase diverse functionalities of arrays
+            
+            document.write("Array Str : " + arr.join(" ")+ "<br/ >");
+            document.write("Array Slice : " + arr.slice(0,2)+ "<br/ >");
+            document.write("Array Reversed : " + arr.reverse()+ "<br/ >");
+        }
+
+        function arraySplicing()
+        {
+            var numList = [2, 8, 6, 0, 16, 11, 9 ];
+            document.write("Sort array : " + numList.sort() + "<br />");
+            document.write("Splice array : " + numList.splice(0,3) + "<br />"); // it chops the array, knocks off the elemnts between 0, 3
+            document.write("Array after splice : " + numList + "<br />" ); // shows the ressult of splicing
+            document.write("Replace array : " + numList.splice(0,2,22,23) + "<br />"); // knock out the elems between 0,2 and replace em with 22,23
+            document.write("Array after splice : " + numList + "<br />" );    
+        }
+
+        function multiDimArr()
+        {
+            var multiDim = [ [1,2,3] , [4,5,6] ];
+            //document.write(multiDim[1][2] + "<br />");
+            for(var i= 0 ; multiDim.length; i++)
+            {
+                for(var j=0; multiDim[i].length ; j++)
+                {
+                    document.write(multiDim[i][j] + " ");
+                }
+                document.write("<br / >");
+            }
+        }
+
+    </script>
+
+    <p> ------------------ <p>
+
+    <script language="javascript" type="text/javascript">
+
+        arr = generateArray1();
+        //printArrFunc(arr);
+        //arraySplicing();
+        multiDimArr();
+        
+    </script>    
+
+</body>
+
+</html>

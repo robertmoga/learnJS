@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>JS tut 5 </title>
+    </head>
+    
+    <body>
+        <h3> JS tut 5</h3>
+
+        <script langauge="javascript" type="text/javascript">
+        // document object model : DOM
+            document.write(">>Start <br />");
+
+            function editNodeText(id, newText)
+            {
+                var node = document.getElementById(id);
+                while(node.firstChild)
+                {
+                    node.removeChild(node.firstChild);
+                }
+                node.appendChild(document.createTextNode(newText));
+
+                document.getElementById(id).style.color="red";
+                return true;
+            }
+
+            function editNodeText2(id, newText)
+            {
+                var node = document.getElementById(id);
+                node.removeChild(node.childNodes[0]);
+                node.childNodes[1].nodeValue=newText;
+
+                var newNode = document.createElement('hr');
+                node.appendChild(newNode);
+
+                var randTextNode = document.createTextNode("I'm random");
+                node.appendChild(randTextNode);
+            }
+        
+        </script>
+
+        <span id="spanEx" onclick="editNodeText('spanEx', 'NewText is here ')" > Change text </span> <br />
+
+        <div id="divEx" onclick="editNodeText2('divEx', 'New Text in Div')"> 
+            <b>Bold text here</b> <br />
+            <i>Italic text</i> <br />
+            
+
+        </div>
+
+    </body>
+</html>

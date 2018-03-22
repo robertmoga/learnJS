@@ -1,0 +1,55 @@
+<html>
+    <body>
+        <h1> JavaSCript Tutorial </h1>
+
+        <div>
+            <script language="javascript" type="text/javascript">
+            
+                // document.write(Number.MAX_VALUE);
+                // document.write(Number.MIN_VALUE);
+
+                var num_var = 5;
+                var str_var = "10"
+
+                total1 = num_var + str_var;
+                total2 = num_var  + str_var;
+
+                document.write(total1 + "  " + total2 + "</br>");
+
+                var str1 = "Propozitie";
+                document.write(" > "+str1.substring(2,5)+"  "+str1.charAt(str1.length-1)+"</br>");
+
+                var arr = ['Focus', 'Fiesta', 'Mondeo', 'GT' ]
+
+                for(i in arr)
+                {
+                    document.write("Elm la poz [ " + i + " ] : "+ arr[i]+ "</br>");
+                }
+                document.write("-------"+"</br>");
+                for (i = 0 ; i<10 ; i++)
+                {
+                    document.write(i + " ");
+                    if(i%3==0)
+                    {
+                        document.write("</br>");
+                    }
+                }
+            </script>
+
+        <noscript>
+            This site requires javascript
+        </noscript>
+
+        </div>
+
+        ------------------------- <p>
+
+        <script language="javascript" src="addFunc.js"> 
+        //try functions
+
+        document.write("Addition : " + addThese(5.25) + "</br>");
+        
+        </script>
+
+    </body>
+</html>

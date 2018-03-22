@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <title>Tut 3 Derek</title>
+</head>
+
+<body>
+    <h3> Tut 3 JS - OOP </h3>
+    <div>
+
+        <script language="javascript" type="text/javascript">
+            //constructor
+            function Animal() {
+                this.name = "No Name";
+                this.sound = "Grr";
+                this.owner = "No Owner";
+            }
+
+            Animal.prototype.setOwner = function (newOwner) {
+                if (typeof newOwner != 'undefined') {
+                    this.owner = newOwner;
+                }
+                else {
+                    document.write("Please eneter a valid owner <br/>");
+                }
+            }
+
+            Animal.prototype.getOwner = function () {
+                return this.owner;
+            }
+
+            Animal.prototype.setName = function(newName)
+            {
+                if(typeof newName != 'undefined')
+                {
+                    this.name = newName;
+                }
+                else
+                {
+                    document.write("Please enter a valid name <br/>");
+                }
+            }
+            Animal.prototype.getName = function()
+            {
+                return this.name;
+            }
+
+            Animal.prototype.setSound = function(newSound)
+            {
+                if( typeof newSound != 'undefined' )
+                {
+                    this.sound = newSound;
+                }
+                else
+                {
+                    document.write("Please eneter a valid sound <br/>");
+                }
+            }
+            Animal.prototype.getSound = function()
+            {
+                return this.sound;
+            }
+
+            var dog = new Animal();
+            dog.setName("Spot");
+            dog.setOwner("Paul");
+            dog.setSound("Woof");
+
+            document.write(dog.getName() + "<br/>" );
+            document.write(dog.getOwner() + "<br/>" );
+            document.write(dog.getSound() + "<br/>" );
+
+            document.write("<br/> ------------ <br/>");
+
+            function Cat()
+            {
+                Animal.call(this); // inherit everything from Animal
+                this.mode = "Happy";
+
+            }
+
+            //setting the Animal as superclass of the Cat
+            Cat.prototype = new Animal(); // if we are not doing this Cat 
+            //will be consideredto be a subclass of Animal
+
+            Cat.prototype.constructor = Cat;
+
+            Cat.prototype.getMode = function()
+            {
+                return this.mode;
+            }
+            Cat.prototype.setMode = function(newMode)
+            {
+                if(typeof newMode != 'undefined')
+                {
+                    this.mode = newMode;
+                }
+                else
+                {
+                    document.write("Please enter a valid mode");
+                }
+            }
+
+            var sophie = new Cat();
+
+            sophie.setName("Sophie");
+            sophie.setOwner("Gabi");
+            sophie.setSound("Meow");
+            sophie.setMode("Cat");
+
+            document.write(sophie.getName() + " is " + sophie.getMode() + "<br/>");
+            //document.write("Huehue");
+            document.write("<p>");
+
+            document.write(sophie instanceof Cat);
+            document.write("</br>");
+            document.write(typeof(sophie) + " & " + typeof(Cat));
+
+            //method overloading
+            
+            Cat.prototype.setStuff = function(newName, newSound, newOwner)
+            {
+                if((typeof newName != 'undifined')&&(typeof newName != 'undifined') && (typeof newName != 'undifined') )
+                {
+                    // we are overwriting this method 
+                    Cat.prototype.setStuff = function(newName, newSound, newOwner)
+                    {
+                        this.name=newName;
+                        this.sound=newSound;
+                        this.owner=newOwner;
+                    } // or whatever condition here
+                }else if ((typeof newName != 'undifined')||(typeof newName != 'undifined')) 
+                {
+                    document.write("We are going on this brench");
+                }
+            }
+
+            //polymorphism 
+             
+
+
+             
+             
+
+        </script>
+    </div>
+</body>
+
+</html>

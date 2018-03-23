@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>Tut 5 Teste</title>
+
+    <script language="javascript" type="text/javascript">
+
+        function expand(rid) {
+            //document.write("Am intrat in  row");
+
+            var node = document.getElementById(rid);
+            while (node.firstChild) {
+                //node.removeChild(node.firstChild);
+            }
+
+            alert("Method executed");
+
+            return true;
+        }
+
+        function alertme() {
+            //alert("Click on the table");
+            return true;
+        }
+
+        function removeLines(id) {
+            var node = document.getElementById(id);
+
+            while (node.firstChild) {
+                node.removeChild(node.firstChild);
+            }
+        }
+
+        function process(id) {
+            node = document.getElementById(id);
+
+            node.appendChild(document.createTextNode("newText"));
+            return true;
+        }
+
+        
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <table border="1" id = "table" onclick="alertme()">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Current status
+            </th>
+            <th>
+                Conversion rate
+            </th>
+
+        </tr>
+
+        <tr id="r1" onclick="expand(r1);">
+            <td id="c11">
+                Hue
+            </td>
+            <td>
+                Working
+            </td>
+            <td>
+                3.5%
+            </td>
+        </tr>
+
+
+        <tr id="r2">
+            <td>
+                Bahue
+            </td>
+            <td>
+                Broken
+            </td>
+            <td>
+                25%
+            </td>
+        </tr>
+
+        <tr id="r3">
+            <td>
+                Ahue
+            </td>
+            <td>
+                Working
+            </td>
+            <td>
+                17%
+            </td>
+        </tr>
+    </table>
+    <br />
+    <div id="div">
+
+        <p id="p1"> Line 1 </p>
+
+        <p> Line 2 </p>
+
+        <p> Line 3 </p>
+
+    </div>
+
+
+    <input type="button" onclick="removeLines('div');" value="Remove">
+    <br />
+    <br />
+    <input type="button" onclick="process('p1');" value="Expand">
+    <br />
+
+    <br />
+    <input type="button" onclick="addRow('table');" value="Add">
+    <br />
+
+</body>
+
+</html>

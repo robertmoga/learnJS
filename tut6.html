@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>
+        JS tut 6
+    </title>
+</head>
+
+<body>
+
+
+    <script langauge="javascript" type="text/javascript">
+
+        document.write("Start <br /> <br />");
+
+         var regPat = /[0-9]{1,5}\s[A_Z]{2}\b[a-b]{2,}/;
+         var regPat2 = new RegExp("\d{1,5}\s[A_Z]{2}\b[a-b]{2,}/");
+
+        var longStr = "Derek 123 Main St Pittsburgh 15457 (412)-555-5555 dbanas@newthinktank.com";
+
+        document.write(longStr.search(/[A-Za-z]{1,15}\s/) + "<br />");
+
+        str = "heuhue bahue";
+
+        document.write(str.search(/[a-z]{1,}/));
+
+        document.write("<br /> <br /> Finish");
+
+    </script>
+
+</body>
+
+</html>
